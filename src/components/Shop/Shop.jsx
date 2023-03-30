@@ -20,9 +20,24 @@ const Shop = () => {
     }
 
     useEffect ( () => {
-        const storedCart = getShoppingCart();
-        console.log(storedCart);
-    }, [])
+        const storeCart = getShoppingCart();
+        // console.log(storeCart);
+        const savedCart = [];
+
+        for (const id in storeCart) {
+            const addedProduct = products.find(product => product.id === id)
+            console.log(addedProduct);
+            
+            if (addedProduct) {
+                const quantity = storeCart[id];
+                addedProduct.quantity = quantity;
+                savedCart.push(addedProduct);
+            }
+        }
+        setCart(savedCart);
+
+    } , [products] )
+    
 
     return (
         <div className='shop-container'>
