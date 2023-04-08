@@ -5,7 +5,7 @@ import ReviewItem from '../ReviewItem/ReviewItem';
 import './Order.css'
 import { removeFromDb } from '../../../utilities/fakedb';
 import { deleteShoppingCart } from '../../../utilities/fakedb';
-import { ArrowRightIcon, CreditCardIcon } from '@heroicons/react/24/solid'
+import { CreditCardIcon } from '@heroicons/react/24/solid'
 const Orders = () => {
     const saveCart = useLoaderData();
     const [carts, setCarts] = useState(saveCart)

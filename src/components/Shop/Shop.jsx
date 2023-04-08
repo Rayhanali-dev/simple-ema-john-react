@@ -38,11 +38,8 @@ const Shop = () => {
     useEffect(() => {
         const storeCart = getShoppingCart();
         const savedCart = [];
-
         for (const id in storeCart) {
             const addedProduct = products.find(product => product.id === id)
-            console.log(addedProduct);
-
             if (addedProduct) {
                 const quantity = storeCart[id];
                 addedProduct.quantity = quantity;
@@ -50,7 +47,6 @@ const Shop = () => {
             }
         }
         setCart(savedCart);
-
     }, [products])
 
     return (
